@@ -8,7 +8,7 @@
  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
  <link rel="stylesheet" href="{% static 'css/login-register.css' %}" />
- <title>Insta-clone : Log-in</title>
+ <title>Insta-clone : Register</title>
  <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon" />
 </head>
 
@@ -16,7 +16,7 @@
  <div class="wrapper fadeInDown">
   <div id="formContent">
    <!-- Tabs Titles -->
-   <h2 class="active">Log In</h2>
+   <h2 class="active">Sign up</h2>
 
    <!-- Icon -->
    <div class="fadeIn first">
@@ -26,10 +26,9 @@
 
    <!-- Login Form -->
    <form action="" method="POST">
-    {% csrf_token %}
-    <input type="email" id="login" class="fadeIn second" name="email" placeholder="Email" required />
-    <input type="password" id="password" class="fadeIn third" name="password" placeholder="password" required />
-    <input type="submit" class="fadeIn fourth" value="Log In" style="margin-top: 20px" />
+    {% csrf_token %} {{form.username}} {{form.email}} {{form.password1}}
+    {{form.password2}}
+    <input type="submit" class="fadeIn fourth" value="Sign Up" style="margin-top: 20px" />
    </form>
 
    <!-- Remind Passowrd -->
@@ -40,8 +39,8 @@
    </div>
    <div id="formFooter">
     <p>
-     Create Account?
-     <a class="underlineHover" href="{% url 'register' %}">Register now</a>
+     Have An Account?
+     <a class="underlineHover" href="{% url 'login' %}">Log in now</a>
     </p>
     <p>
      Going back?
