@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .forms import MyCreateUserForm
 # Create your views here.
 
 def home(request):
@@ -9,4 +9,6 @@ def loginPage(request):
    return render(request, 'login.html')
   
 def registerPage(request):
-   return render(request, 'register.html')
+   form = MyCreateUserForm()
+   context = {'form':form}
+   return render(request, 'register.html', context)

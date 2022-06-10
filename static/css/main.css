@@ -9,7 +9,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px 10%;
-  background-color: #24252a;
+  background-color: #71c7f1;
 }
 
 .logo {
@@ -47,7 +47,7 @@ header {
 
 .cta {
   padding: 9px 25px;
-  background-color: rgba(0, 136, 169, 1);
+  background-color: rgb(42, 112, 170);
   border: none;
   border-radius: 50px;
   cursor: pointer;
@@ -71,7 +71,7 @@ header {
   z-index: 1;
   left: 0;
   top: 0;
-  background-color: #24252a;
+  background-color: #71c7f1;
   overflow-x: hidden;
   transition: width 0.5s ease 0s;
 }

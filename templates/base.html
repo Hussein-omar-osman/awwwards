@@ -4,10 +4,9 @@
 <head>
  <meta charset="utf-8">
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
- <title>Navbar</title>
+ <title>Home page</title>
  <meta name="description" content="">
  <meta name="viewport" content="width=device-width, initial-scale=1">
- <link rel="stylesheet" href="{% static 'css/login-register.css' %}" />
  <link rel="stylesheet" href="{% static 'css/main.css' %}">
 
  <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
@@ -23,7 +22,7 @@
     <li><a href="#">Contact</a></li>
    </ul>
   </nav>
-  <a class="cta" href="#">Login</a>
+  <a class="cta" href="{% url 'login' %}">Login</a>
   <p class="menu cta">Menu</p>
  </header>
  <div class="overlay">
