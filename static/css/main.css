@@ -8,7 +8,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 10%;
+  padding: 20px 10%;
   background-color: #24252a;
 }
 
@@ -105,6 +105,7 @@ header {
   right: 45px;
   font-size: 60px;
   color: #edf0f1;
+  cursor: pointer;
 }
 
 @media screen and (max-height: 450px) {
