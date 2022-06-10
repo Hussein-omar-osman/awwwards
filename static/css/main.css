@@ -3,6 +3,9 @@
   margin: 0;
   padding: 0;
 }
+body {
+  max-width: 100vw;
+}
 
 header {
   display: flex;
@@ -126,5 +129,88 @@ header {
   }
   .menu {
     display: initial;
+  }
+}
+
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url('https://res.cloudinary.com/husseincloud/image/upload/v1653661523/ln0fqdgxpud6eye7rybm.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image .hero-text {
+  color: #fff;
+  text-align: center;
+}
+
+.hero-image .hero-text h1 {
+  font-size: 50px;
+  font-weight: 500;
+}
+
+.hero-image .hero-text p {
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+.hero-image .hero-btn {
+  text-decoration: none;
+  color: #fff;
+  background: #000;
+  padding: 10px 30px;
+  border-radius: 5px;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.hero-image .hero-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+.pro-h1 {
+  max-width: 300px;
+  margin: 20px auto;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.all-pro {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.pro {
+  max-width: 30%;
+  padding: 10px;
+  border: 1px solid black;
+  margin-top: 40px;
+  border-radius: 30px;
+}
+.div-img {
+  position: relative;
+}
+.pro-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+@media (max-width: 700px) {
+  .all-pro {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
   }
 }
