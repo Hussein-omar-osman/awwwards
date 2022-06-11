@@ -29,3 +29,17 @@ class Post(models.Model):
       ordering = ['-created']
     def __str__(self):
         return self.title
+     
+     
+class Ratings(models.Model):
+   user = models.ForeignKey(User, on_delete=models.CASCADE)
+   post = models.ForeignKey(Post, on_delete=models.CASCADE)
+   stars = models.IntegerField()
+   body = models.TextField()
+   created = models.DateTimeField(auto_now_add=True)  
+   
+   class Meta:
+      ordering = ['-created']
+      
+   def __str__(self):
+         return self.body[0:50]

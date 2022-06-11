@@ -1,63 +1,38 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="profile-info">
- <div class="profile-img">
-  <img src="{{account.image.url}}" alt="">
- </div>
- <div class="profile-content">
-  <h1>@{{account.username}}</h1>
-  <p>{{account.bio}}</p>
- </div>
+  <div class="profile-img">
+    <img src="{{account.image.url}}" alt="">
+  </div>
+  <div class="profile-content">
+    <h1>@{{account.username}}</h1>
+    <p>{{account.bio}}</p>
+  </div>
 </div>
 
 <div class="pro-h1">
- <h2>All Projects</h2>
+  <h2>All Projects</h2>
 </div>
 
 <div class="all-pro">
- <div class="pro">
-  <div class="div-img">
-   <img class="pro-img" src="https://res.cloudinary.com/husseincloud/image/upload/v1654426724/shp6tuxvmuki7dduqfsm.jpg"
-    alt="">
-  </div>
-  <h2 class="pro-title">Lorem ipsum dolor sit amet.</h2>
-  <p class="pro-des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos magnam maiores pariatur soluta
-   optio. Corporis cum
-   totam soluta facilis ut!</p>
-  <div class="div-btn">
-   <button class="pro-btn">Vote</button>
-  </div>
- </div>
- <div class="pro">
-  <div class="div-img">
-   <img class="pro-img" src="https://res.cloudinary.com/husseincloud/image/upload/v1654426724/shp6tuxvmuki7dduqfsm.jpg"
-    alt="">
-  </div>
-  <h2 class="pro-title">Lorem ipsum dolor sit amet.</h2>
-  <p class="pro-des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos magnam maiores pariatur soluta
-   optio. Corporis cum
-   totam soluta facilis ut!</p>
-  <div class="div-btn">
-   <button class="pro-btn">Vote</button>
-  </div>
- </div>
- <div class="pro">
-  <div class="div-img">
-   <img class="pro-img" src="https://res.cloudinary.com/husseincloud/image/upload/v1654426724/shp6tuxvmuki7dduqfsm.jpg"
-    alt="">
-  </div>
-  <h2 class="pro-title">Lorem ipsum dolor sit amet.</h2>
-  <p class="pro-des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos magnam maiores pariatur soluta
-   optio. Corporis cum
-   totam soluta facilis ut!</p>
-  <div class="div-btn">
-   <button class="pro-btn">Vote</button>
-  </div>
- </div>
+  {% for post in posts %}
 
+  <div class="pro">
+    <div class="div-img">
+      <img class="pro-img" src="{{post.image.url}}" alt="">
+    </div>
+    <h2 class="pro-title">{{post.title}}.</h2>
+    <p class="pro-des">{{post.feedback}}</p>
+    <span class="live-link"><a href="{{post.url}}" target="_blank">Live
+        Link</a></span>
+    <div class="div-btn">
+      <a href="{% url 'post' post.id %}" style="text-decoration: none; color: #ffffff;"><button
+          class="pro-btn">Rate</button></a>
 
+    </div>
+  </div>
 
-
+  {% endfor %}
 </div>
 
 {% endblock content %}

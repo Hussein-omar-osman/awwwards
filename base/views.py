@@ -73,7 +73,8 @@ def logoutUser(request):
 
 def profile(request, us):
    account = User.objects.get(username=us)
-   context = {'title':'Awwwords - Profile', 'account':account}
+   posts = Post.objects.filter(user__username=us)
+   context = {'title':'Awwwords - Profile', 'account':account, 'posts':posts}
    return render(request, 'profile.html', context)
 
 @login_required(login_url='login')
