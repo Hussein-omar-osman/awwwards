@@ -19,3 +19,7 @@ def profile(request):
 
 def upload(request):
    return render(request, 'upload.html')
+
+def post(request):
+   
+   return render(request, 'post.html')

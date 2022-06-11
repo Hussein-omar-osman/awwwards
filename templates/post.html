@@ -1,0 +1,79 @@
+{% extends 'base.html' %} {% block content %}
+<div class="post-cont">
+ <div class="post-user">
+  <img class="post-user-img"
+   src="https://res.cloudinary.com/husseincloud/image/upload/v1654495563/e1wyraw7biniqrkupbzq.jpg" alt="">
+  <span class="post-username">@hussein</span>
+ </div>
+ <div class="img-div">
+  <img src="https://res.cloudinary.com/husseincloud/image/upload/v1654426724/shp6tuxvmuki7dduqfsm.jpg" alt="">
+ </div>
+ <h1 class="post-title">Lorem ipsum dolor sit amet. <span class="live-link"><a href="#">Live Link</a></span></h1>
+ <p class="post-des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eius fugit adipisci ratione
+  reprehenderit. Cupiditate
+  repellendus nemo facere eos veniam, recusandae, consectetur eum suscipit accusamus expedita similique, blanditiis
+  repellat optio omnis laborum illo debitis qui quas aut quae magni cumque. Laborum ratione voluptate molestiae debitis
+  dignissimos, nisi eligendi, libero mollitia distinctio porro voluptatibus! Fugiat possimus ad, dolores ipsum nulla,
+  odio voluptate architecto perspiciatis soluta voluptas quasi repellat saepe, facere maxime amet nostrum velit quisquam
+  nihil quia! Natus in quasi ut possimus cupiditate corporis omnis distinctio cum eaque soluta, consequuntur debitis
+  reprehenderit, ad repellat non delectus ex dolor blanditiis libero eius.</p>
+
+ <div class="rate">
+  <div class="rate-info">
+   <h3>Rate this project</h3>
+   <button class="star">&#9734</button>
+   <button class="star">&#9734</button>
+   <button class="star">&#9734</button>
+   <button class="star">&#9734</button>
+   <button class="star">&#9734</button>
+
+   <p class="star-count">0 of 5</p>
+  </div>
+  <form class="form-comment" action="">
+   <input type="text" name="rate" id="rate" style="display: none;" value="0">
+   <textarea name="" id="" cols="30" rows="6" placeholder="Feedback"></textarea>
+   <button class="com-btn" type="submit">Submit</button>
+  </form>
+ </div>
+
+ <div class="comment-div">
+
+  <div class="each-comment" style="margin: 20px;">
+   <div class="com-user">
+    <img src="https://res.cloudinary.com/husseincloud/image/upload/v1654495563/e1wyraw7biniqrkupbzq.jpg" alt=""
+     srcset="">
+   </div>
+   <div class="com-body" style="margin-left: 10px;">
+    <h4>@hussein</h4>
+    <h5 style="margin: 5px;">5 stars</h5>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, ratione?</p>
+   </div>
+  </div>
+  <div class="each-comment" style="margin: 20px;">
+   <div class="com-user">
+    <img src="https://res.cloudinary.com/husseincloud/image/upload/v1654495563/e1wyraw7biniqrkupbzq.jpg" alt=""
+     srcset="">
+   </div>
+   <div class="com-body" style="margin-left: 10px;">
+    <h4>@hussein</h4>
+    <h5 style="margin: 5px;">5 stars</h5>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, ratione?</p>
+   </div>
+  </div>
+  <div class="each-comment" style="margin: 20px;">
+   <div class="com-user">
+    <img src="https://res.cloudinary.com/husseincloud/image/upload/v1654495563/e1wyraw7biniqrkupbzq.jpg" alt=""
+     srcset="">
+   </div>
+   <div class="com-body" style="margin-left: 10px;">
+    <h4>@hussein</h4>
+    <h5 style="margin: 5px;">5 stars</h5>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, ratione?</p>
+   </div>
+  </div>
+
+
+ </div>
+</div>
+
+{% endblock content %}

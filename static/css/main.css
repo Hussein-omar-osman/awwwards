@@ -207,7 +207,7 @@ header {
 .pro {
   max-width: 30%;
   padding: 10px;
-  border: 1px solid black;
+  border: 1px solid #6e6e6e;
   margin-top: 40px;
   border-radius: 30px;
   transition: all 0.3s ease-in-out;
@@ -435,4 +435,137 @@ label {
   background: #ff1010;
   text-decoration: none;
   border: none;
+}
+
+.post-cont {
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+.post-user-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.post-user {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.post-username {
+  font-weight: bolder;
+  font-style: italic;
+  margin-left: 10px;
+}
+
+.img-div img {
+  max-width: 90%;
+  /* max-height: 750px; */
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.live-link {
+  color: #000;
+  font-size: 20px;
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.live-link a {
+  text-decoration: none;
+  color: rgb(33, 132, 199);
+  font-size: 15px;
+}
+.post-title {
+  margin: 10px 0;
+}
+
+.post-des {
+  line-height: 30px;
+}
+
+.comment-div {
+  background-color: #e7e7e7;
+  width: 100%;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.com-user {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.com-user span {
+  margin-left: 10px;
+  font-style: italic;
+}
+
+.com-user img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.each-comment {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.rate {
+  max-width: 90%;
+  margin: 20px auto;
+  user-select: none;
+}
+
+.form-comment {
+  background-color: white;
+}
+.rate-info {
+  color: black;
+}
+
+.form-comment textarea {
+  padding: 20px;
+  margin: 10px auto;
+  border-radius: 20px;
+}
+
+.com-btn {
+  -webkit-border-radius: 11;
+  -moz-border-radius: 11;
+  border-radius: 11px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 12px;
+  display: block;
+  background: #409fed;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.com-btn:hover {
+  background: #3cb4fa;
+  text-decoration: none;
+  border: none;
+}
+
+.star {
+  font-size: 1.8rem;
+  color: #ff9800;
+  background-color: unset;
+  border: none;
+}
+
+.star:hover {
+  cursor: pointer;
 }
