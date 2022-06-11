@@ -343,3 +343,25 @@ label {
   width: 1px;
   overflow: hidden;
 }
+
+.profile-info {
+  max-width: 70%;
+  margin: 50px auto;
+  display: flex;
+  padding: 20px 50px;
+}
+
+.profile-img img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.profile-content {
+  margin-left: 40px;
+}
+
+.profile-content h1 {
+  margin-bottom: 10px;
+}
