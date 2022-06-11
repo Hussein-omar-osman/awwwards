@@ -14,46 +14,26 @@
 </div>
 
 <div class="all-pro">
+  {% for post in posts %}
+
   <div class="pro">
     <div class="div-img">
-      <img class="pro-img"
-        src="https://res.cloudinary.com/husseincloud/image/upload/v1654426724/shp6tuxvmuki7dduqfsm.jpg" alt="">
+      <img class="pro-img" src="{{post.image.url}}" alt="">
     </div>
-    <h2 class="pro-title">Lorem ipsum dolor sit amet.</h2>
-    <p class="pro-des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos magnam maiores pariatur soluta
-      optio. Corporis cum
-      totam soluta facilis ut!</p>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <span><a href="{%url 'profile' post.user.username%}"
+          style="text-decoration: none; color: rgb(111, 199, 250);">@{{post.user.username}}</a></span>
+      <span>{{post.created | timesince}}</span>
+    </div>
+    <h2 class="pro-title">{{post.title}}</h2>
+    <p class="pro-des">{{post.feedback}}</p>
     <div class="div-btn">
-      <button class="pro-btn">Vote</button>
+      <button class="pro-btn">Rate</button>
     </div>
-  </div>
-  <div class="pro">
-    <div class="div-img">
-      <img class="pro-img"
-        src="https://res.cloudinary.com/husseincloud/image/upload/v1654426724/shp6tuxvmuki7dduqfsm.jpg" alt="">
-    </div>
-    <h2 class="pro-title">Lorem ipsum dolor sit amet.</h2>
-    <p class="pro-des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos magnam maiores pariatur soluta
-      optio. Corporis cum
-      totam soluta facilis ut!</p>
-    <div class="div-btn">
-      <button class="pro-btn">Vote</button>
-    </div>
-  </div>
-  <div class="pro">
-    <div class="div-img">
-      <img class="pro-img"
-        src="https://res.cloudinary.com/husseincloud/image/upload/v1654426724/shp6tuxvmuki7dduqfsm.jpg" alt="">
-    </div>
-    <h2 class="pro-title">Lorem ipsum dolor sit amet.</h2>
-    <p class="pro-des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos magnam maiores pariatur soluta
-      optio. Corporis cum
-      totam soluta facilis ut!</p>
-    <div class="div-btn">
-      <button class="pro-btn">Vote</button>
-    </div>
+
   </div>
 
+  {% endfor %}
 
 
 

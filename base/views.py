@@ -10,7 +10,9 @@ from cloudinary.forms import cl_init_js_callbacks
 # Create your views here.
 
 def home(request):
-   context = {'title':'Awwwords - Home'}
+   posts = Post.objects.all()
+   
+   context = {'title':'Awwwords - Home', 'posts':posts}
    return render(request, 'home.html', context)
   
 def loginPage(request):
