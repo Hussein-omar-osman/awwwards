@@ -76,7 +76,7 @@ def profile(request, us):
    context = {'title':'Awwwords - Profile', 'account':account}
    return render(request, 'profile.html', context)
 
-@login_required(login_url='loginPage')
+@login_required(login_url='login')
 def upload(request):
    context = {'title':'Awwwords - Upload'}
    if request.method == 'POST':
@@ -89,7 +89,7 @@ def upload(request):
       return redirect('home')
    return render(request, 'upload.html', context)
 
-@login_required(login_url='loginPage')
+@login_required(login_url='login')
 def post(request, pk):
    post = Post.objects.get(id=pk)
    context = {'title':'Awwwords - Post', 'post':post}
