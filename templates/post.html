@@ -29,9 +29,10 @@
 
    <p class="star-count">0 of 5</p>
   </div>
-  <form class="form-comment" action="">
+  <form class="form-comment" action="" method="POST">
+   {% csrf_token %}
    <input type="text" name="rate" id="rate" style="display: none;" value="0">
-   <textarea name="" id="" cols="30" rows="6" placeholder="Feedback"></textarea>
+   <textarea name="feedback" id="" cols="30" rows="6" placeholder="Feedback" required></textarea>
    <button class="com-btn" type="submit">Submit</button>
   </form>
  </div>

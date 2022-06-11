@@ -21,5 +21,6 @@ def upload(request):
    return render(request, 'upload.html')
 
 def post(request):
-   
+   if request.method == 'POST':
+      print(request.POST)
    return render(request, 'post.html')
