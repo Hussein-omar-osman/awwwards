@@ -6,24 +6,25 @@
  }
 </style>
 <div class="upload-post">
- <form action="" class="form-upload">
+ <form action="" class="form-upload" method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
   <div>
    <h2 style="text-align: center; margin-bottom: 10px;">Upload A Project</h2>
   </div>
   <div>
 
-   <input type="text" name="" class="title" placeholder="Title">
+   <input type="text" name="title" class="title" placeholder="Title" required>
   </div>
   <div>
-   <input type="url" name="" class="title" placeholder="Url">
+   <input type="url" name="url" class="title" placeholder="Url" required>
   </div>
   <div>
 
-   <textarea class="des" name="" id="des" cols="30" rows="15" placeholder="Description"></textarea>
+   <textarea class="des" name="feedback" id="des" cols="30" rows="15" placeholder="Description" required></textarea>
   </div>
   <div>
    <p style="margin: 10px 0;">Image:</p>
-   <input type="file" name="" id="img">
+   <input type="file" name="image" id="img" required>
   </div>
   <div>
    <button class="upload-btn" style="cursor: pointer;" type="submit">Upload</button>

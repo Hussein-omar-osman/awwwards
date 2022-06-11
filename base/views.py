@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import MyCreateUserForm
 from django.contrib import messages
-from base.models import User
+from base.models import User, Post
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.db.models import Q
@@ -29,10 +29,10 @@ def loginPage(request):
      user = authenticate(request, email=email, password=password)
      if user:
          login(request, user)
-         messages.success(request, 'Log-in Successfull.')
+         
          return redirect('home')
      else:
-         messages.error(request, 'Email and password correct.')
+         messages.error(request, 'Email or password incorrect.')
    return render(request, 'login.html')
   
 def registerPage(request):
@@ -77,11 +77,18 @@ def profile(request, us):
 @login_required(login_url='loginPage')
 def upload(request):
    context = {'title':'Awwwords - Upload'}
+   if request.method == 'POST':
+      image = request.FILES.get('image')
+      title = request.POST.get('title')
+      url = request.POST.get('url')
+      feedback = request.POST.get('feedback')
+      post = Post.objects.create(user=request.user, title=title, url=url, image=image, feedback=feedback)
+      post.save()
+      return redirect('home')
    return render(request, 'upload.html', context)
 
 @login_required(login_url='loginPage')
 def post(request):
    context = {'title':'Awwwords - Post'}
-   if request.method == 'POST':
-      print(request.POST)
+   
    return render(request, 'post.html', context)
