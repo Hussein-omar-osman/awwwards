@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import MyCreateUserForm
 from django.contrib import messages
-from base.models import User, Post
+from base.models import Ratings, User, Post
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.db.models import Q
@@ -93,5 +93,14 @@ def upload(request):
 @login_required(login_url='login')
 def post(request, pk):
    post = Post.objects.get(id=pk)
-   context = {'title':'Awwwords - Post', 'post':post}
+   if request.method == 'POST':
+      print(request.POST)
+      rate = int(request.POST.get('rate'))
+      feedback = request.POST.get('feedback')
+      print(request.POST)
+      rating = Ratings.objects.create(user=request.user, post=post, stars=rate, body=feedback)
+      rating.save()
+      return redirect('post', pk=post.id)
+   rating_info = post.ratings_set.all().order_by('-created')
+   context = {'title':'Awwwords - Post', 'post':post, 'rating_info':rating_info}
    return render(request, 'post.html', context)

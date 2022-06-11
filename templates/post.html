@@ -31,40 +31,20 @@
   </div>
 
   <div class="comment-div">
+    {% for rating in rating_info %}
+
 
     <div class="each-comment" style="margin: 20px;">
       <div class="com-user">
-        <img src="https://res.cloudinary.com/husseincloud/image/upload/v1654495563/e1wyraw7biniqrkupbzq.jpg" alt=""
-          srcset="">
+        <img src="{{rating.user.image.url}}" alt="" srcset="">
       </div>
       <div class="com-body" style="margin-left: 10px;">
-        <h4>@hussein</h4>
-        <h5 style="margin: 5px;">5 stars</h5>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, ratione?</p>
+        <h4>@{{rating.user.username}}</h4>
+        <h5 style="margin: 5px;">{{rating.stars}} stars</h5>
+        <p>{{rating.body}}</p>
       </div>
     </div>
-    <div class="each-comment" style="margin: 20px;">
-      <div class="com-user">
-        <img src="https://res.cloudinary.com/husseincloud/image/upload/v1654495563/e1wyraw7biniqrkupbzq.jpg" alt=""
-          srcset="">
-      </div>
-      <div class="com-body" style="margin-left: 10px;">
-        <h4>@hussein</h4>
-        <h5 style="margin: 5px;">5 stars</h5>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, ratione?</p>
-      </div>
-    </div>
-    <div class="each-comment" style="margin: 20px;">
-      <div class="com-user">
-        <img src="https://res.cloudinary.com/husseincloud/image/upload/v1654495563/e1wyraw7biniqrkupbzq.jpg" alt=""
-          srcset="">
-      </div>
-      <div class="com-body" style="margin-left: 10px;">
-        <h4>@hussein</h4>
-        <h5 style="margin: 5px;">5 stars</h5>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, ratione?</p>
-      </div>
-    </div>
+    {% endfor %}
 
 
   </div>
