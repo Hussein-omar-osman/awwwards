@@ -16,3 +16,6 @@ def registerPage(request):
 
 def profile(request):
    return render(request, 'profile.html')
+
+def upload(request):
+   return render(request, 'upload.html')

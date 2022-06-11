@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+ body {
+  background-color: rgb(233, 242, 250);
+ }
+</style>
+<div class="upload-post">
+ <form action="" class="form-upload">
+  <div>
+   <h2 style="text-align: center; margin-bottom: 10px;">Upload A Project</h2>
+  </div>
+  <div>
+
+   <input type="text" name="" class="title" placeholder="Title">
+  </div>
+  <div>
+   <input type="url" name="" class="title" placeholder="Url">
+  </div>
+  <div>
+
+   <textarea class="des" name="" id="des" cols="30" rows="15" placeholder="Description"></textarea>
+  </div>
+  <div>
+   <p style="margin: 10px 0;">Image:</p>
+   <input type="file" name="" id="img">
+  </div>
+  <div>
+   <button class="upload-btn" type="submit">Upload</button>
+   <button class="cancel-btn" type="button">Cancel</button>
+  </div>
+ </form>
+</div>
+
+{% endblock content %}
