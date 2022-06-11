@@ -474,6 +474,7 @@ label {
   font-size: 20px;
   font-style: italic;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-left: 10px;
 }
 
 .live-link a {
@@ -482,6 +483,7 @@ label {
   font-size: 15px;
 }
 .post-title {
+  text-transform: capitalize;
   margin: 10px 0;
 }
 

@@ -90,7 +90,7 @@ def upload(request):
    return render(request, 'upload.html', context)
 
 @login_required(login_url='loginPage')
-def post(request):
-   context = {'title':'Awwwords - Post'}
-   
+def post(request, pk):
+   post = Post.objects.get(id=pk)
+   context = {'title':'Awwwords - Post', 'post':post}
    return render(request, 'post.html', context)

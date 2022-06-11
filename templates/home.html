@@ -23,12 +23,16 @@
     <div style="display: flex; justify-content: space-between; align-items: center;">
       <span><a href="{%url 'profile' post.user.username%}"
           style="text-decoration: none; color: rgb(111, 199, 250);">@{{post.user.username}}</a></span>
-      <span>{{post.created | timesince}}</span>
+      <span style="color: rgba(0, 0, 0, 0.329);">{{post.created | timesince}}</span>
     </div>
     <h2 class="pro-title">{{post.title}}</h2>
     <p class="pro-des">{{post.feedback}}</p>
+    <span class="live-link"><a href="{{post.url}}" target="_blank">Live
+        Link</a></span>
     <div class="div-btn">
-      <button class="pro-btn">Rate</button>
+
+      <a href="{% url 'post' post.id %}" style="text-decoration: none; color: #ffffff;"><button
+          class="pro-btn">Rate</button></a>
     </div>
 
   </div>
