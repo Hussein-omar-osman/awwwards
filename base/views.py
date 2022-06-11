@@ -14,6 +14,25 @@ def home(request):
    return render(request, 'home.html', context)
   
 def loginPage(request):
+   if request.user.is_authenticated:
+     return redirect('home')
+   if request.method == 'POST':
+     email = request.POST['email'].lower()
+     password = request.POST['password']
+     print(email)
+     print(password)
+     try:
+         user = User.objects.get(email=email)
+     except:
+         messages.error(request, 'User not exist.')
+         
+     user = authenticate(request, email=email, password=password)
+     if user:
+         login(request, user)
+         messages.success(request, 'Log-in Successfull.')
+         return redirect('home')
+     else:
+         messages.error(request, 'Email and password correct.')
    return render(request, 'login.html')
   
 def registerPage(request):
@@ -38,22 +57,29 @@ def registerPage(request):
                user.username = user.username.lower()
                user.email = user.email.lower()
                user.save()
-               # login(request, user)
+               login(request, user)
                return redirect('home')       
            else:
              messages.error(request, 'An error ocurred during registration.')
           
    return render(request, 'register.html', context)
 
+def logoutUser(request):
+    logout(request)
+    return redirect('home')
 
-def profile(request):
-   context = {'title':'Awwwords - Profile'}
+
+def profile(request, us):
+   account = User.objects.get(username=us)
+   context = {'title':'Awwwords - Profile', 'account':account}
    return render(request, 'profile.html', context)
 
+@login_required(login_url='loginPage')
 def upload(request):
    context = {'title':'Awwwords - Upload'}
    return render(request, 'upload.html', context)
 
+@login_required(login_url='loginPage')
 def post(request):
    context = {'title':'Awwwords - Post'}
    if request.method == 'POST':

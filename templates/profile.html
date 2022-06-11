@@ -2,12 +2,11 @@
 {% block content %}
 <div class="profile-info">
  <div class="profile-img">
-  <img src="https://res.cloudinary.com/husseincloud/image/upload/v1654495563/e1wyraw7biniqrkupbzq.jpg" alt="">
+  <img src="{{account.image.url}}" alt="">
  </div>
  <div class="profile-content">
-  <h1>@hussein</h1>
-  <p>bio Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque repellendus consectetur possimus enim aut
-   molestiae laborum dolorum vitae eum magni.</p>
+  <h1>@{{account.username}}</h1>
+  <p>{{account.bio}}</p>
  </div>
 </div>
 
