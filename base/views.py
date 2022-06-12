@@ -108,3 +108,15 @@ def post(request, pk):
    rating_info = post.ratings_set.all().order_by('-created')
    context = {'title':'Awwwords - Post', 'post':post, 'rating_info':rating_info, 'over_rall':over_rall}
    return render(request, 'post.html', context)
+
+
+def searchResults(request):
+   if request.method == 'POST':
+        q = request.POST.get('q')
+        print(q)
+        posts = Post.objects.filter(Q(title__icontains=q))
+        context = {'title':'Awwwords - Search', 'q':q, 'posts':posts}
+        return render(request, 'search_result.html', context)
+   
+   context = {'title':'Awwwords - Search'}
+   return render(request, 'search_result.html', context)

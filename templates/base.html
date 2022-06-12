@@ -19,9 +19,10 @@
  {%load cloudinary%}
  <header>
   <a class="logo" href="/">Awwwards</a>
-  <form role="search">
+  <form role="search" action="{% url 'searchResults' %}" method="POST">
+   {% csrf_token %}
    <label for="search">Search for stuff</label>
-   <input id="search" type="search" placeholder="Search..." autofocus required />
+   <input id="search" name="q" type="search" placeholder="Search..." autofocus required />
    <button class="form-btn" type="submit"><i class="fas fa-search"></i></button>
   </form>
 
