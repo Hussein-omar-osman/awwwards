@@ -1,6 +1,6 @@
 ## Awwwards
 
-This is a web-api that users a restful api and enables users to register an account and be logged in. Users can also upload projects to the feed so other users can rate and give feedback. The platform also allows users can edit their profile account and log out whenever they want.
+This is a web-app that users a restful api and enables users to register an account and be logged in. Users can also upload projects to the feed so other users can rate and give feedback. The platform also allows users can edit their profile account and log out whenever they want.
 
 ## Author Information
 
