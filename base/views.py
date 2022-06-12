@@ -100,7 +100,11 @@ def post(request, pk):
       print(request.POST)
       rating = Ratings.objects.create(user=request.user, post=post, stars=rate, body=feedback)
       rating.save()
+      post.comments = post.comments + 1
+      post.tota_rating = post.tota_rating + rate
+      post.save()
       return redirect('post', pk=post.id)
+   over_rall = round(post.tota_rating / post.comments)
    rating_info = post.ratings_set.all().order_by('-created')
-   context = {'title':'Awwwords - Post', 'post':post, 'rating_info':rating_info}
+   context = {'title':'Awwwords - Post', 'post':post, 'rating_info':rating_info, 'over_rall':over_rall}
    return render(request, 'post.html', context)
