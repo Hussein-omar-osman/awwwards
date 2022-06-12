@@ -22,8 +22,8 @@ class Post(models.Model):
     image = CloudinaryField('image')
     feedback = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
-    tota_rating = models.IntegerField(default=0)
-    comments = models.IntegerField(default=0)
+    tota_rating = models.IntegerField(default=5)
+    comments = models.IntegerField(default=1)
     
 
     class Meta:

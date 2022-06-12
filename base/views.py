@@ -104,6 +104,7 @@ def post(request, pk):
       post.tota_rating = post.tota_rating + rate
       post.save()
       return redirect('post', pk=post.id)
+   
    over_rall = round(post.tota_rating / post.comments)
    rating_info = post.ratings_set.all().order_by('-created')
    context = {'title':'Awwwords - Post', 'post':post, 'rating_info':rating_info, 'over_rall':over_rall}
