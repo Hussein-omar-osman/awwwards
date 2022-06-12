@@ -4,6 +4,7 @@ const menuClose = doc.querySelector('.close');
 const overlay = doc.querySelector('.overlay');
 const allStars = document.querySelectorAll('.star');
 const starCount = document.querySelector('.star-count');
+const newsDes = document.querySelectorAll('.pro-des');
 const rating = document.querySelector('#rate');
 
 menuOpen.addEventListener('click', () => {
@@ -32,3 +33,16 @@ allStars.forEach((star, i) => {
     });
   };
 });
+
+for (nt of newsDes) {
+  DesContent = nt.textContent;
+  console.log(DesContent);
+  len = DesContent.length;
+  console.log(len);
+  if (len > 120) {
+    content_dis = DesContent.slice(0, 110);
+    nt.innerText = `${content_dis}...`;
+    console.log(DesContent);
+  }
+  console.log(DesContent);
+}
