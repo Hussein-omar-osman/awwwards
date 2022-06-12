@@ -7,6 +7,10 @@
   <div class="profile-content">
     <h1>@{{account.username}}</h1>
     <p>{{account.bio}}</p>
+    {% if account == request.user %}
+    <a href="{% url 'accountSettings' %}"><button class="edit-profile">Edit Profile</button></a>
+
+    {% endif %}
   </div>
 </div>
 

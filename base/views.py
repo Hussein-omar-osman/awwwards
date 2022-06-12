@@ -120,3 +120,29 @@ def searchResults(request):
    
    context = {'title':'Awwwords - Search'}
    return render(request, 'search_result.html', context)
+
+@login_required(login_url='login')
+def accountSettings(request):
+  
+    if request.method == 'POST':
+      contact = request.POST.get('contact')
+      bio = request.POST.get('bio')
+      image = request.FILES.get('image')
+      print(contact, bio, image)
+
+      
+      user = request.user
+      if image != None:
+         user.contact = contact
+         user.bio = bio
+         user.image = image
+         user.save()
+      else:
+         user.contact = contact
+         user.bio = bio
+         user.save()
+      return redirect('accountSettings')
+          
+      
+    return render (request, 'account_settings.html')
+  

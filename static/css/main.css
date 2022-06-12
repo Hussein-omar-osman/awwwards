@@ -574,3 +574,23 @@ label {
 .star:hover {
   cursor: pointer;
 }
+
+.edit-profile {
+  -webkit-border-radius: 9;
+  -moz-border-radius: 9;
+  border-radius: 9px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 13px;
+  background: #53abe6;
+  padding: 10px 14px 10px 13px;
+  border: solid #1f628d 0px;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.edit-profile:hover {
+  background: #2eafff;
+  text-decoration: none;
+}
