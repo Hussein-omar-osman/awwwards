@@ -17,8 +17,8 @@ Run the IP address on the browser
 
 - Get all posts: 'https://awwwards-app-rest.herokuapp.com/api/posts/' : Method = 'GET'
 - Get all users: 'https://awwwards-app-rest.herokuapp.com/api/users/' : Method = 'GET'
-- Get a single post: 'https://awwwards-app-rest.herokuapp.com/api/post/{id}/' : Method = 'GET'
-- Get a single user: 'https://awwwards-app-rest.herokuapp.com/api/user/{id}/' : Method = 'GET'
+- Get a single post: 'https://awwwards-app-rest.herokuapp.com/api/post/{id}' : Method = 'GET'
+- Get a single user: 'https://awwwards-app-rest.herokuapp.com/api/user/{id}' : Method = 'GET'
 
 ## User Stories
 
